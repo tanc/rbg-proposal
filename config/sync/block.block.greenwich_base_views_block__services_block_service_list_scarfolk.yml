@@ -1,0 +1,32 @@
+uuid: 4244155f-aeb2-4914-9f98-4b9c960dc841
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.services
+  module:
+    - system
+    - views
+  theme:
+    - greenwich_base
+_core:
+  default_config_hash: dIZQveClXGuKNNnnZIszG9I_DBPhQp4eMCPkbYqVkOg
+id: greenwich_base_views_block__services_block_service_list_scarfolk
+theme: greenwich_base
+region: content_top
+weight: 5
+provider: null
+plugin: 'views_block:services-block_service_list'
+settings:
+  id: 'views_block:services-block_service_list'
+  label: 'Services list block'
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: '<front>'

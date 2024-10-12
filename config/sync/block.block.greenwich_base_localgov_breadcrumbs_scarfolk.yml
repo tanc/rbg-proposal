@@ -1,0 +1,22 @@
+uuid: d9c2c0ae-4e49-482e-a69d-129041cf37fc
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - greenwich_base
+_core:
+  default_config_hash: HMT0p1pe6D6hsYTqyWbzK2nquVWT6anaDXoNu7WYvPI
+id: greenwich_base_localgov_breadcrumbs_scarfolk
+theme: greenwich_base
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

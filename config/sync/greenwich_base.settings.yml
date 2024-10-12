@@ -1,0 +1,14 @@
+features:
+  node_user_picture: true
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: 1
+logo:
+  use_default: 0
+  path: themes/custom/greenwich_base/images/rbg-logo--white.svg
+favicon:
+  use_default: 1
+localgov_base_remove_css: 0
+localgov_base_remove_js: 0
+localgov_base_add_unpublished_background_colour: 0
+localgov_base_add_draft_note_to_unpublished_content: 0

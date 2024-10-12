@@ -1,0 +1,14 @@
+uuid: 76cd30db-5650-4324-9c2c-71f6bed78ed8
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Bl0yZxDk_n84ambWpE5tRQBzzGkv8cHUuFrFF4lLrKw
+id: square
+label: Square
+description: ''
+aspect_ratio: '1:1'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

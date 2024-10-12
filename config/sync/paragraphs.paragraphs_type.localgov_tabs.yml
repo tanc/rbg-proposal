@@ -1,0 +1,12 @@
+uuid: c7e2f945-7f37-44b4-b5f2-f158879de705
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: YTyBQqbyY8TuzP_VsPaMpRXxInuvdNfNPWmLZ7FLRyQ
+id: localgov_tabs
+label: Tabs
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,12 @@
+uuid: a4527595-5b45-4dce-8dde-7e9c73db8173
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: HsfMgsjBw36BxavXsAxoc1rYMrzJxikun2fZK0udnBY
+id: localgov_key_facts
+label: 'Key facts'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

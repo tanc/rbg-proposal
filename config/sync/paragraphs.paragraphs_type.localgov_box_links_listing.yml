@@ -1,0 +1,12 @@
+uuid: 37dc1c7b-41d1-4987-bba3-8c7884bf36e5
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: fgliPu0HvuPHcFaEafbva6rey0z7PVdmPpdXkPywNB4
+id: localgov_box_links_listing
+label: 'Box links listing'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

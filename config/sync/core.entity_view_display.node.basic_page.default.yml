@@ -1,0 +1,30 @@
+uuid: 9e455763-cce6-48fd-93e1-841bda2e401e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.basic_page.localgov_paragraph_content
+    - node.type.basic_page
+  module:
+    - entity_reference_revisions
+    - user
+id: node.basic_page.default
+targetEntityType: node
+bundle: basic_page
+mode: default
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  localgov_paragraph_content:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

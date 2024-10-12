@@ -1,0 +1,13 @@
+uuid: c6a1b742-b89d-4a0a-b1c8-383c4242e1ef
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: hmAwdVWyuyENXPnpTW_-BkhTgvMosn3wHjgcKMulwZE
+id: media.localgov_featured_large
+label: 'Featured large'
+description: ''
+targetEntityType: media
+cache: true

@@ -1,0 +1,22 @@
+uuid: f52f99d0-8a78-4527-9704-b2668521ba87
+langcode: en
+status: true
+dependencies:
+  module:
+    - localgov_services_page
+  theme:
+    - greenwich_base
+_core:
+  default_config_hash: PVdTznuKPvuCBQyC2dbF8BYAHgpc0PTD0kSIpbSzyrc
+id: greenwich_base_localgov_servicepagerelatedtopics_scarfolk
+theme: greenwich_base
+region: sidebar_second
+weight: 1
+provider: null
+plugin: localgov_services_related_topics_block
+settings:
+  id: localgov_services_related_topics_block
+  label: 'Service page related topics'
+  label_display: '0'
+  provider: localgov_services_page
+visibility: {  }

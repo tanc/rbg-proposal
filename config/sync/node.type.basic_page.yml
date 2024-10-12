@@ -1,0 +1,19 @@
+uuid: cf3d2136-9c44-40d9-81a0-6da18f975d8f
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - footer
+      - main
+    parent: 'main:'
+name: 'Basic page'
+type: basic_page
+description: null
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

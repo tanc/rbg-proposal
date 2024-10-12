@@ -1,0 +1,22 @@
+uuid: 5afb8605-1d2a-4b6c-9e59-b3500b84ae78
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - greenwich_base
+_core:
+  default_config_hash: XqdhRTIfjgkSTBL-WtfsStngpA1B7I9_ajAh3cVOk5s
+id: greenwich_base_localgov_messages_scarfolk
+theme: greenwich_base
+region: messages
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Messages
+  label_display: '0'
+  provider: system
+visibility: {  }
