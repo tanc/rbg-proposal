@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+## Description: Run Storybook commands.
+## Usage: storybook
+## Example: "ddev storybook dev"
+
+STORYBOOK_PATH=/var/www/html/storybook
+
+if [ $# -ne 1 ]; then
+  echo "Usage: $0 <dev|build|watch>"
+  exit 1
+fi
+
+case "$1" in
+dev)
+  cd $STORYBOOK_PATH
+  yarn storybook
+  ;;
+build)
+  cd $STORYBOOK_PATH
+  yarn storybook-build
+  ;;
+watch)
+  watch --color drush storybook:generate-all-stories
+  ;;
+*)
+  echo "Invalid parameter. Use dev, build, or watch."
+  exit 1
+  ;;
+esac

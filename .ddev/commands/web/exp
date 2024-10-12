@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+## Description: Run PHPSTAN to report on code deprecations.
+## Usage: exp
+## Example: "ddev exp"
+
+cd /var/www/html/storybook
+yarn dev
