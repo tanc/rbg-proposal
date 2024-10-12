@@ -1,0 +1,23 @@
+/*
+  This is a basic grid system, that should be very easy to use.
+  To use, simply add an element with a class of .lgd-row, then add
+  another element as a direct descendant(s) of this with the widths
+  you want:
+   - .lgd-row__full
+   - .lgd-row__three-quarters
+   - .lgd-row__two-thirds
+   - .lgd-row__one-half
+   - .lgd-row__one-third
+   - .lgd-row__one-quarter
+
+  In some cases, this might mean adding more templates than we want, so
+  we have further classes that will give the same result by adding a modifier
+  class to the parent .lgd-row element (e.g. <div class="lgd-row lgd-row--halves">).
+  - .lgd-row--halves - direct descendants are all 50% each
+  - .lgd-row--thirds - direct descendants are all 33% each
+  - .lgd-row--quarters - direct descendants are all 25% each
+*/
+.lgd-row > * {
+  margin-right: calc(var(--grid-column-spacing) / 2);
+  margin-left: 0;
+}

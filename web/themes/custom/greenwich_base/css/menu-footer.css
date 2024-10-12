@@ -1,0 +1,16 @@
+.menu--footer {
+  display: flex;
+  list-style: none;
+  padding-top: var(--spacing-large);
+  padding-left: 0;
+}
+
+.menu--footer .menu-item {
+  margin-right: var(--spacing-larger);
+  font-weight: 600;
+}
+
+.menu--footer .menu-item a {
+  text-decoration: none;
+}
+

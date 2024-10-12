@@ -1,0 +1,35 @@
+.paragraph--type--localgov-text {
+  line-height: 1.875rem;
+}
+
+.paragraph--type--localgov-text p {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
+
+.paragraph--type--localgov-text p,
+.paragraph--type--localgov-text li {
+  font-size: var(--font-size-large);
+}
+
+.paragraph--type--localgov-text p a,
+.paragraph--type--localgov-text li a {
+  font-weight: 500;
+}
+
+.paragraph--type--localgov-text li {
+  margin-top: .66666rem;
+}
+
+.paragraph--type--localgov-text h2:not(:first-child),
+.paragraph--type--localgov-text h3:not(:first-child),
+.paragraph--type--localgov-text h4:not(:first-child) {
+  margin-top: 3.66666rem;
+}
+
+.paragraph--type--localgov-text ul,
+.paragraph--type--localgov-text ol {
+  margin: 0;
+  padding: 0 0 0 1.6666666667rem;
+  list-style-position: outside;
+}

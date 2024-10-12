@@ -1,0 +1,25 @@
+/*
+  @file Theming the breadcrumbs region.
+
+  This CSS is very generic. Most themes will not need to override it,
+  except perhaps to change the what is used as a divider between items.
+  The breadcrumbs divider can be changed via the --breadcrumbs-divider
+  variable.
+*/
+
+.breadcrumbs__list .breadcrumbs__item + .breadcrumbs__item::before {
+  margin-bottom: -0.25rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='17' fill='none'%3E%3Cpath fill='%23dc3338' fill-rule='evenodd' d='m5.93 0 8.353 8.354-8.353 8.353-2.506-2.506L9.27 8.354 3.424 2.506 5.93 0Z' clip-rule='evenodd'/%3E%3C/svg%3E%0A");
+  width: 18px;
+  height: 17px;
+  content: ' ';
+}
+
+.breadcrumbs__list .breadcrumbs__item {
+  font-weight: 500;
+}
+
+.breadcrumbs__list .breadcrumbs__item a {
+  text-decoration: none;
+  font-weight: 400;
+}

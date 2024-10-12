@@ -1,0 +1,57 @@
+/*
+  @file Theming for the header area.
+  Note: The header area is NOT just the header region. It is the
+  header region, but also the containing wrapper, which places
+  - primary menu
+  - search
+  - mobile search, and
+  - secondary menu
+
+  We will theme those individual regions in their own files. This
+  file is for the general area layout and the specific header region.
+*/
+
+header.lgd-header {
+  color: var(--color-black);
+  padding-top: 0;
+  padding-bottom: 0;
+  border-bottom: 1px solid var(--color-grey-lighter);
+}
+
+.lgd-region--header {
+  align-self: stretch;
+}
+
+.lgd-region__inner--header {
+  height: 100%;
+}
+
+.lgd-region__inner--header * {
+  height: 100%;
+}
+
+.branding__item--logo {
+  background-color: var(--color-red);
+  align-self: stretch;
+  padding: calc(1.15 * var(--section-spacing-vertical-header));
+}
+
+.lgd-header__toggles {
+  padding-top: clamp(1rem, 10vw, var(--section-spacing-vertical-header));
+  padding-bottom: clamp(1rem, 10vw, var(--section-spacing-vertical-header));
+}
+
+.branding {
+  display: flex;
+  align-items: center;
+}
+
+.branding__item--name {
+  font-size: var(--font-size-h3);
+  font-weight: 550;
+  color: var(--color-red);
+  height: auto;
+  margin-left: var(--spacing-large);
+  letter-spacing: -0.01em;
+  padding-top: var(--spacing-large);
+}

@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'Kantumruy Pro';
+  font-style: italic;
+  font-weight: 100 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/l/font?kit=1q2eY5aECkp34vEBSPFOmJxwlEbBe7cDgkVo6SmDyUwcMFA-apJ5ovT800oL7B4WALKfMaIPYHCL2FtDVv-49rDILMPMFo0YOGyuFSD_AHxo_gSkkhTbT7wWFNZuToptdTw_xctGqyBtALzm8DBL8w5nmrE3Y6T5SwbNE-V6iZtPPyltwpN1K_OacOH_sGngRh96GlfvFJOe3ObQuBtXtTnR9E8h-Nceh6VmEbRoCPtDfjmiK2szC_-r3A&skey=699b08f22fe8a9f&v=v8) format('woff2');
+}
+@font-face {
+  font-family: 'Kantumruy Pro';
+  font-style: normal;
+  font-weight: 100 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/l/font?kit=1q2AY5aECkp34vEBSPFOmJxwpEHT3ISAoUdu7yuBx0IeMlY4aJBnvPb-1UwJ7hAYArCZN6ANHg6J2l1FVP22-LLKKsXOFJMGOm6oEyL9DnJq_AKikBblcb4UEtBsTIRjdz45w8lEtT5vArrg8jJF_QxlnLc13Hj5SgbLE-h6iJtNPyxt2JN5K_CTTeHjsG_JWm4YCSGNAOn8xJ2yoWM1r0ez6DBD5at8meUEM_AKLqAhR2HAEyVTI78&skey=ea376acd9418385a&v=v8) format('woff2');
+}
+
+body {
+  background-color: var(--color-grey-lightest);
+}

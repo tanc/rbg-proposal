@@ -1,0 +1,13 @@
+/*
+  @file Theming for the page title and lede block.
+*/
+
+.block .lgd-page-title-block {
+  margin-top: calc(var(--vertical-rhythm-spacing) * 1.75);
+  margin-bottom: calc(var(--vertical-rhythm-spacing) * 3);
+}
+
+.block .lgd-page-title-block__title {
+  margin-bottom: 0;
+  padding-bottom: calc(var(--vertical-rhythm-spacing) * 3);
+}
