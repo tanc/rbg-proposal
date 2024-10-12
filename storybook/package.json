@@ -1,0 +1,27 @@
+{
+  "name": "storybook",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@chromatic-com/storybook": "^1.9.0",
+    "@storybook/addon-essentials": "^8.3.5",
+    "@storybook/addon-links": "^8.3.5",
+    "@storybook/addon-webpack5-compiler-swc": "^1.0.5",
+    "@storybook/blocks": "^8.3.5",
+    "@storybook/server": "^8.3.5",
+    "@storybook/server-webpack5": "^8.3.5",
+    "@storybook/test": "^8.3.5",
+    "@whitespace/storybook-addon-html": "^6.1.1",
+    "react-syntax-highlighter": "^15.5.0",
+    "storybook": "^8.3.5"
+  },
+  "scripts": {
+    "storybook": "storybook dev -p 6006 --no-open",
+    "build-storybook": "storybook build"
+  },
+  "packageManager": "yarn@4.5.0",
+  "dependencies": {
+    "prettier": "^3.3.3"
+  }
+}
