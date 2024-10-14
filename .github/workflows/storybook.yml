@@ -22,21 +22,48 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: /storybook
-    steps:
-      - name: enable corepack
+        steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: List repository contents
+        run: |
+          echo "Repository structure:"
+          ls -R
+
+      - name: Set working directory
+        run: |
+          if [ -d "storybook" ]; then
+            echo "STORYBOOK_DIR=storybook" >> $GITHUB_ENV
+          else
+            echo "STORYBOOK_DIR=." >> $GITHUB_ENV
+          fi
+
+      - name: Enable corepack
         run: corepack enable
-      - name: set node
+
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 'lts/*'
           cache: 'yarn'
-      - id: build-publish
-        uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
+          cache-dependency-path: ${{ env.STORYBOOK_DIR }}/yarn.lock
+
+      - name: Install dependencies
+        run: yarn install
+        working-directory: ${{ env.STORYBOOK_DIR }}
+
+      - name: Build Storybook
+        run: yarn build-storybook
+        working-directory: ${{ env.STORYBOOK_DIR }}
+
+      - name: 'upload'
+        uses: actions/upload-pages-artifact@v3
         with:
-          install_command: yarn install
-          build_command: yarn build-storybook
-          path: storybook-static
-          checkout: false
+          path: ${{ env.STORYBOOK_DIR }}/storybook-static
+
+      - id: deploy
+        name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
+        with:
+          token: ${{ github.token }}
