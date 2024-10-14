@@ -23,10 +23,17 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - id: build-publish
-      uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
-      with:
-        install_command: yarn install
-        build_command: yarn build-storybook
-        path: storybook-static
-        checkout: false
+      - name: enable corepack
+        run: corepack enable
+      - name: set node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+          cache: 'yarn'
+      - id: build-publish
+        uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
+        with:
+          install_command: yarn install
+          build_command: yarn build-storybook
+          path: storybook-static
+          checkout: false
