@@ -22,18 +22,19 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./storybook
     steps:
       - name: enable corepack
         run: corepack enable
       - name: set node
         uses: actions/setup-node@v4
-        working-directory: ./storybook
         with:
           node-version: 'lts/*'
           cache: 'yarn'
       - id: build-publish
         uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
-        working-directory: ./storybook
         with:
           install_command: yarn install
           build_command: yarn build-storybook
