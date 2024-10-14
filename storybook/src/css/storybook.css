@@ -1,0 +1,16 @@
+.docblock-argstable {
+  border: none;
+}
+
+.docblock-argstable-head th {
+  background-color: transparent;
+  border: none;
+}
+
+.docblock-code-toggle {
+  display: none !important;
+}
+
+#storybook-docs .docs-story > div {
+  overflow: hidden;
+}

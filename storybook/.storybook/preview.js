@@ -1,12 +1,22 @@
 /** @type { import('@storybook/server').Preview } */
+
+import '../src/css/storybook.css';
+
 const preview = {
   parameters: {
+    layout: 'fullscreen',
+    docs: {
+      story: {
+        iframeHeight: 140,
+      },
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
         date: /Date$/i,
       },
     },
+  },
   html: {
     prettier: {
       tabWidth: 2,
@@ -29,7 +39,6 @@ const preview = {
       // string.
       return storybookHtmlElement ? storybookHtmlElement.innerHTML : storybookWrapper ? storybookWrapper.innerHTML : '';
     }
-  },
   },
   tags: ['autodocs']
 };

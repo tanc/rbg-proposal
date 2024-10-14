@@ -1,0 +1,103 @@
+{# Define the header stories #}
+
+{% stories header with { title: 'Components/Layout/Header' } %}
+
+  {% story default with {
+    name: '1. Default',
+    parameters: {
+      docs: {
+        description: {
+          story: '
+A header is a container for various optional components. It can include a logo, site name, and navigation.
+          ',
+        },
+      },
+    },
+    args: {
+      site_name: 'Greenwich',
+      menu_items: [
+        {
+          title: 'Home',
+          url: 'internal:/'
+        },
+        {
+          title: 'About',
+          url: 'internal:/about'
+        }
+      ]
+    },
+    argTypes: {
+      site_name: {
+        name: 'Site name',
+        type: 'string',
+      },
+      menu_items: {
+        name: 'Menu items',
+        type: 'object',
+        defaultValue: [
+          {
+            title: 'Home',
+            url: 'internal:/'
+          },
+          {
+            title: 'About',
+            url: 'internal:/about'
+          }
+        ]
+      }
+    }
+  } %}
+
+    {# Define the branding variable #}
+    {% set branding %}
+      {% include '@greenwich_base/templates/block/block--system-branding-block.html.twig' with {
+        label: 'Branding',
+        title_attributes: create_attribute({ class: 'visually-hidden' }),
+        site_logo: url('<front>')|render ~ active_theme_path() ~ '/assets/images/rbg-logo--white.svg',
+        site_name: site_name
+      } %}
+    {% endset %}
+
+    {% set items = {} %}
+
+    {# The menu items are iterated over producing the structure needed for the menu #}
+    {# to be rendered. #}
+    {% for key, item in menu_items %}
+      {% set menu_item_key = 'menu_link_content:' ~ key %}
+      {% set items = items|merge({
+        (menu_item_key): {
+          'title': item.title,
+          'url': item.url,
+          'attributes': create_attribute({'class': ['menu-item']}),
+          'below': {}
+        }
+      }) %}
+    {% endfor %}
+
+    {% set menu %}
+    {% embed '@localgov_base/templates/block/block--system-menu-block.html.twig' with {
+      label: 'Main navigation',
+      title_attributes: create_attribute({ class: 'visually-hidden' }),
+      configuration: {
+        label: 'Main navigation',
+      },
+      attributes: create_attribute({ id: 'main-menu', class: 'lgd-region--primary-menu' }),
+    } %}
+      {% block content %}
+        {% include '@localgov_base/templates/navigation/menu.html.twig' with {
+          items: items, attributes: create_attribute(), menu_level: 0, menu_name: 'main' } %}
+      {% endblock %}
+    {% endembed %}
+    {% endset %}
+
+    {# The page variable is passed to the header template as so it can render the #}
+    {# header region. #}
+    {% set page = { header: branding, primary_menu: menu } %}
+
+    {% include '@greenwich_base/templates/layout/header.html.twig' with {
+      page: page,
+      has_primary_menu: true
+    } %}
+  {% endstory %}
+
+{% endstories %}

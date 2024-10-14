@@ -1,0 +1,40 @@
+{# Define the header stories #}
+
+{% set content %}
+  {% include '@greenwich_base/stories/paragraphs/text/content.twig' %}
+{% endset %}
+
+{% stories text with { title: 'Components/Paragraphs/Text' } %}
+
+
+
+  {% story default with {
+    name: '1. Default',
+    parameters: {
+      docs: {
+        description: {
+          story: '
+A paragraph component which displays formatted text.
+          ',
+        },
+      },
+    },
+    args: {
+      content: content|trim,
+    },
+    argTypes: {
+      content: {
+        name: 'Content',
+        type: 'string',
+        control: 'text',
+      },
+    }
+  } %}
+
+    {% include '@localgov_base/templates/paragraphs/paragraph.html.twig' with {
+      content: content,
+      attributes: create_attribute({'class': ['paragraph', 'paragraph--type--localgov-text']})
+    } %}
+  {% endstory %}
+
+{% endstories %}

@@ -9,6 +9,7 @@ variables:
       css/header.css: {}
       css/breadcrumbs.css: {}
       css/menu-footer.css: {}
+      css/menu-main.css: {}
       css/page-title-block.css: {}
       css/paragraphs.css: {}
       css/grid.css: {}

@@ -17,6 +17,7 @@
         "drupal/core-recommended": "^10.3",
         "drupal/easy_breadcrumb": "^2.0",
         "drupal/storybook": "^1.0",
+        "drupal/twig_tweak": "^3",
         "localgovdrupal/localgov": "^3.0",
         "localgovdrupal/localgov_search_solr": "^1.1"
     },

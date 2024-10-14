@@ -80,7 +80,7 @@ body {
   /* Header Items */
   --section-spacing-vertical-header: var(--spacing);
   --color-section-header-bg: transparent;
-  --header-link-color: var(--color-white);
+  --header-link-color: var(--color-black);
   --header-services-button-border: 0;
   --header-services-button-border-color: transparent;
   --header-services-button-color: var(--color-black);
