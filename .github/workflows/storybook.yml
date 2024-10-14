@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./storybook
+        working-directory: storybook
     steps:
       - name: enable corepack
         run: corepack enable
