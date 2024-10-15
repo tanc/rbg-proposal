@@ -6,8 +6,6 @@
 
 {% stories text with { title: 'Components/Paragraphs/Text' } %}
 
-
-
   {% story default with {
     name: '1. Default',
     parameters: {
@@ -31,10 +29,12 @@ A paragraph component which displays formatted text.
     }
   } %}
 
+  <div class="storybook-html">
     {% include '@localgov_base/templates/paragraphs/paragraph.html.twig' with {
       content: content,
       attributes: create_attribute({'class': ['paragraph', 'paragraph--type--localgov-text']})
     } %}
+  </div>
   {% endstory %}
 
 {% endstories %}

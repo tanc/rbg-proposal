@@ -75,29 +75,31 @@ A header is a container for various optional components. It can include a logo, 
     {% endfor %}
 
     {% set menu %}
-    {% embed '@localgov_base/templates/block/block--system-menu-block.html.twig' with {
-      label: 'Main navigation',
-      title_attributes: create_attribute({ class: 'visually-hidden' }),
-      configuration: {
+      {% embed '@localgov_base/templates/block/block--system-menu-block.html.twig' with {
         label: 'Main navigation',
-      },
-      attributes: create_attribute({ id: 'main-menu', class: 'lgd-region--primary-menu' }),
-    } %}
-      {% block content %}
-        {% include '@localgov_base/templates/navigation/menu.html.twig' with {
-          items: items, attributes: create_attribute(), menu_level: 0, menu_name: 'main' } %}
-      {% endblock %}
-    {% endembed %}
+        title_attributes: create_attribute({ class: 'visually-hidden' }),
+        configuration: {
+          label: 'Main navigation',
+        },
+        attributes: create_attribute({ id: 'main-menu', class: 'lgd-region--primary-menu' }),
+      } %}
+        {% block content %}
+          {% include '@localgov_base/templates/navigation/menu.html.twig' with {
+            items: items, attributes: create_attribute(), menu_level: 0, menu_name: 'main' } %}
+        {% endblock %}
+      {% endembed %}
     {% endset %}
 
     {# The page variable is passed to the header template as so it can render the #}
     {# header region. #}
     {% set page = { header: branding, primary_menu: menu } %}
 
-    {% include '@greenwich_base/templates/layout/header.html.twig' with {
-      page: page,
-      has_primary_menu: true
-    } %}
+    <div class="storybook-html">
+      {% include '@greenwich_base/templates/layout/header.html.twig' with {
+        page: page,
+        has_primary_menu: true
+      } %}
+    </div>
   {% endstory %}
 
 {% endstories %}
