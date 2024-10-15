@@ -50,6 +50,7 @@ There is a `docker-compose.yml` file and supporting files in the `.build` direct
 To use them you can do the following:
 
 ```
+cp .build/env.example .build/.env
 docker-compose -f .build/docker-compose.yml -f .build/docker-compose.caddy.yml up
 ```
 
