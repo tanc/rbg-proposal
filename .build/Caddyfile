@@ -1,0 +1,11 @@
+{
+    http_port 8088
+}
+
+{$STORYBOOK_DOMAIN} {
+    reverse_proxy storybook:6006
+}
+
+{$DRUPAL_DOMAIN} {
+    reverse_proxy drupal:80
+}

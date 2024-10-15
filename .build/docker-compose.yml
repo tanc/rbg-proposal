@@ -1,0 +1,47 @@
+services:
+  caddy:
+    image: caddy:latest
+    ports:
+      - "8088:8088"
+    environment:
+      - USER_ID=${USER_ID}
+      - STORYBOOK_DOMAIN=${STORYBOOK_DOMAIN}
+      - DRUPAL_DOMAIN=${DRUPAL_DOMAIN}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+    env_file: .env
+    depends_on:
+      - drupal
+      - storybook
+    networks:
+      - webnet
+
+  drupal:
+    build:
+      context: ../
+      dockerfile: .build/drupal/Dockerfile
+      args:
+        - USER_ID=${USER_ID}
+    image: localgov-storybook-drupal:latest
+    user: "${USER_ID}"
+    env_file: .env
+    networks:
+      - webnet
+
+  storybook:
+    build:
+      context: ../
+      dockerfile: .build/storybook/Dockerfile
+      args:
+        - USER_ID=${USER_ID}
+    image: localgov-storybook:latest
+    user: "${USER_ID}"
+    env_file: .env
+    depends_on:
+      - drupal
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    driver: bridge
