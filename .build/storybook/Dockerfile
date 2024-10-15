@@ -15,8 +15,6 @@ WORKDIR /app/storybook
 
 RUN rm -rf storybook-static
 
-RUN echo "$(pwd && ls -l)"
-
 RUN yarn install && yarn build-storybook
 
 CMD ["sh", "-c", "npx http-server storybook-static -p 6006"]

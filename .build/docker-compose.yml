@@ -5,6 +5,7 @@ services:
       dockerfile: .build/drupal/Dockerfile
       args:
         - USER_ID=${USER_ID}
+        - DRUPAL_DOMAIN=${DRUPAL_DOMAIN}
     image: localgov-storybook-drupal:latest
     user: "${USER_ID}"
     env_file: .env

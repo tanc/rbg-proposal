@@ -24,4 +24,4 @@ RUN sed -i 's/^\s*mysql: 0\s*$/  sqlite: 0/' config/sync/core.extension.yml
 
 RUN drush si --existing-config -y --account-pass=admin --config-dir=../config/sync
 
-RUN drush storybook:generate-all-stories --force --uri=http://$DRUPAL_DOMAIN:8088
+RUN drush storybook:generate-all-stories --force --uri="http://${DRUPAL_DOMAIN}"

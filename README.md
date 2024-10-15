@@ -1,48 +1,42 @@
-# LocalGov Drupal Composer project template
+# LocalGov and Storybook
 
-![Tests](https://github.com/localgovdrupal/localgov_project/actions/workflows/test.yml/badge.svg)
+This repo is a starting point for setting up a LocalGov and Storybook integration.
 
-A Composer-based installer for the LocalGov Drupal distribution.
+## Usage
 
-This project template should provide a kickstart for managing your site dependencies with Composer.
+To get set up locally you can run:
 
-## Usage 
+```
+ddev start
+ddev composer install
+sed -i '/function localgov_install() {/,/^}/d' web/profiles/contrib/localgov/localgov.install
+ddev drush si --existing-config -y --config-dir=../config/sync
+```
 
-For guidance on installing see: 
+You'll need to activate development services and its easiest to do this copying
+in the example local settings file:
 
- - [Installing LocalGov Drupal locally with composer](https://github.com/localgovdrupal/localgov#installing-localgov-drupal-locally-with-composer)
- - [Getting started on LocalGov Drupal docs](https://docs.localgovdrupal.org/devs/getting-started/)
+```
+cp web/sites/example.settings.local.php web/sites/default/settings.local.php
+```
 
-## composer.json and composer.lock
+## Hosting storybook
 
-We expect most projects using this package will start with the composer.json in this package, committing it to your own project repository as your own root composer.json. You can then extend composer.json, requiring other Drupal and composer packages and evolve your codebase as needed.
+There is a `docker-compose.yml` file and supporting files in the `.build` directory.
 
-Once you have run a `composer create-project` command, it is usually desirable to commit the composer.lock file to your project repository and use this lock file to control the specific version of packages that you deploy to dev, test and ultimately production hosting environments. 
+To use them you can do the following:
 
-## Gitpod
+```
+docker-compose -f .build/docker-compose.yml -f .build/docker-compose.caddy.yml up
+```
 
-Gitpod allows you to run a virtual development environment in the cloud in your browser. 
+This should build the container images and run them.
 
-This can be very useful for testing functionality, reviewing pull requests, or working on features. 
+You will need to point the following two domains at `127.0.0.1` in your hosts file:
 
-### Before you start
+```
+drupal-storybook.localhost
+storybook.localhost
+```
 
-You will need an account on Gitpod. 
-
-If you authenticate with your Github account, you will be able to push commits back to the repository you are working on.
-
-[Sign up for gitpod.io](https://gitpod.io/login), if you haven't already. 
-
-### Spin up LocalGov Drupal with 
-
-Click on the "Open in Gitpod" button below
-
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/localgovdrupal/localgov_project)
-
-## Maintainers
-
-This project is currently maintained by: 
-
- - Ekes: https://www.drupal.org/u/ekes
- - Finn Lewis: https://www.drupal.org/u/finn-lewis
- - Stephen Cox: https://www.drupal.org/u/stephen-cox 
+You should then be able to view the storybook site at http://storybook.localhost:8088
