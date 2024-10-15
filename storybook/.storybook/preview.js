@@ -25,6 +25,7 @@ const preview = {
     },
     removeComments: true,
     // root: "#___storybook_wrapper",
+    // root: '.storybook-html',
     transform: code => {
       // Create a temporary DOM element
       const tempElement = document.createElement('div');
