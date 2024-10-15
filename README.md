@@ -2,7 +2,7 @@
 
 This repo is a starting point for setting up a LocalGov and Storybook integration.
 
-## Usage
+## Set up for development
 
 To get set up locally you can run:
 
@@ -19,6 +19,29 @@ in the example local settings file:
 ```
 cp web/sites/example.settings.local.php web/sites/default/settings.local.php
 ```
+
+The Drupal site should be available at https://localgov-storybook.ddev.site
+
+## Development
+
+To put Storybook in development mode you can run
+
+```
+ddev storybook dev
+```
+
+Storybook will now be available at https://localgov-storybook.ddev.site:6006
+
+In another terminal run the drush watch command with:
+
+```
+ddev storybook watch
+```
+
+Now you can create and edit stories (located in `web/themes/custom/greenwich_base/stories`) and they
+should be added to Storybook. In some situations you'll need to manually refresh Storybook
+to see the updates.
+
 
 ## Hosting storybook
 
