@@ -1,0 +1,17 @@
+services:
+  caddy:
+    image: caddy:latest
+    ports:
+      - "8088:8088"
+    environment:
+      - USER_ID=${USER_ID}
+      - STORYBOOK_DOMAIN=${STORYBOOK_DOMAIN}
+      - DRUPAL_DOMAIN=${DRUPAL_DOMAIN}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+    env_file: .env
+    depends_on:
+      - drupal
+      - storybook
+    networks:
+      - webnet

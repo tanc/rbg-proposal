@@ -1,6 +1,7 @@
 FROM drupal:10
 
 ARG USER_ID
+ARG DRUPAL_DOMAIN
 RUN useradd -m -u $USER_ID appuser
 
 WORKDIR /opt/drupal
@@ -23,4 +24,4 @@ RUN sed -i 's/^\s*mysql: 0\s*$/  sqlite: 0/' config/sync/core.extension.yml
 
 RUN drush si --existing-config -y --account-pass=admin --config-dir=../config/sync
 
-RUN drush storybook:generate-all-stories --force --uri=http://drupal-storybook.localhost:8088
+RUN drush storybook:generate-all-stories --force --uri=http://$DRUPAL_DOMAIN:8088
